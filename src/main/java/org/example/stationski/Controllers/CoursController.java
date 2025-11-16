@@ -1,5 +1,6 @@
 package org.example.stationski.Controllers;
 
+import lombok.AllArgsConstructor;
 import org.example.stationski.Entities.Abonnement;
 import org.example.stationski.Entities.Cours;
 import org.example.stationski.Services.Interfaces.AbonnementService;
@@ -11,9 +12,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/Cours")
+
 public class CoursController {
     @Autowired
-    CourService CoursService;
+    private final CourService CoursService;
+
+    public CoursController(CourService coursService) {
+        CoursService = coursService;
+    }
 
     @PostMapping("/AjouterCours")
     public Cours AjouterCours(@RequestBody Cours a) {return CoursService.AjouterCours(a);}

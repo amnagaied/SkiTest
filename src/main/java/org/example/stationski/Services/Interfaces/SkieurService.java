@@ -11,5 +11,7 @@ public interface SkieurService {
     void SupprimerSkieur(Long id);
     Skieur GetSkieur(Long id);
     List<Skieur> GetAllSkieur();
+    Skieur assignSkierToPiste(Long numSkieur, Long numPiste);
+    Skieur addSkierAndAssignToCourse(Skieur skieur, Long numCourse);
 
 }

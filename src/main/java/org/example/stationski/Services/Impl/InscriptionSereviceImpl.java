@@ -39,4 +39,15 @@ public class InscriptionSereviceImpl implements InscriptionService {
     public List<Inscription> GetAllInscription() {
         return inscriptionRepository.findAll();
     }
+
+    @Override
+    public Inscription addRegistrationAndAssignToSkier(Inscription inscription, Long numSkier) {
+        return null;
+    }
+
+    @Override
+    public Inscription assignRegistrationToCourse(Long numRegistration, Long numCourse) {
+        return null;
+    }
+
 }

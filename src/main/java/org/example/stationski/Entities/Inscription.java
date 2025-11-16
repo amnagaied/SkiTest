@@ -20,4 +20,6 @@ public class Inscription {
     private Skieur skieur;
     @ManyToOne
     private Cours cours;
+
+
 }

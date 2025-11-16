@@ -19,7 +19,12 @@ import static org.apache.coyote.http11.Constants.a;
 public class SkieurController  {
     @Autowired
 
-    SkieurService SkieurService;
+    private final SkieurService SkieurService;
+
+    public SkieurController(org.example.stationski.Services.Interfaces.SkieurService skieurService) {
+        SkieurService = skieurService;
+    }
+
 
     @PostMapping("/AjouterSkieur")
     public Skieur AjouterSkieur(@RequestBody Skieur a) {return SkieurService.AjouterSkieur(a);}

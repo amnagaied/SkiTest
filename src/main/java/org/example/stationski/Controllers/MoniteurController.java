@@ -14,7 +14,11 @@ import java.util.List;
 
 public class MoniteurController {
     @Autowired
-    MoniteurService MoniteurService;
+    private final MoniteurService MoniteurService;
+
+    public MoniteurController(org.example.stationski.Services.Interfaces.MoniteurService moniteurService) {
+        MoniteurService = moniteurService;
+    }
 
     @PostMapping("/AjouterMoniteur")
     public Moniteur AjouterMoniteur(@RequestBody Moniteur a) {return MoniteurService.AjouterMoniteur(a);}

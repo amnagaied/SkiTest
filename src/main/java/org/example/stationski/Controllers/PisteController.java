@@ -1,5 +1,6 @@
 package org.example.stationski.Controllers;
 
+import lombok.AllArgsConstructor;
 import org.example.stationski.Entities.Cours;
 import org.example.stationski.Entities.Piste;
 import org.example.stationski.Services.Interfaces.CourService;
@@ -11,13 +12,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/Piste")
-
 public class PisteController {
+
     @Autowired
-    PisteService PisteService;
+    private final PisteService PisteService;
+
+    public PisteController(org.example.stationski.Services.Interfaces.PisteService pisteService) {
+        PisteService = pisteService;
+    }
 
     @PostMapping("/AjouterPiste")
-    public Piste AjouterPiste(@RequestBody Piste a) {return PisteService.AjouterPiste(a);}
+    public Piste AjouterPiste(@RequestBody Piste a) {
+        return PisteService.AjouterPiste(a);}
     @PostMapping("/ModifierPiste")
     public Piste ModifierPiste(@RequestBody Piste a) {return PisteService.ModifierPiste(a);}
     @DeleteMapping("/SupprimerPiste")

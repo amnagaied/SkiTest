@@ -11,4 +11,7 @@ public interface InscriptionService {
     void SupprimerInscription(Long id);
     Inscription GetInscription(Long id);
     List<Inscription> GetAllInscription();
+    Inscription addRegistrationAndAssignToSkier(Inscription inscription, Long numSkier);
+    Inscription assignRegistrationToCourse(Long numRegistration, Long numCourse);
+
 }

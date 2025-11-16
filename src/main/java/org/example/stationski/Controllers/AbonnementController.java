@@ -1,5 +1,6 @@
 package org.example.stationski.Controllers;
 
+import lombok.AllArgsConstructor;
 import org.example.stationski.Entities.Abonnement;
 import org.example.stationski.Services.Interfaces.AbonnementService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +10,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/Abonnement")
+
 public class AbonnementController {
     @Autowired
-     AbonnementService abonnementService;
+     private final AbonnementService abonnementService;
+
+    public AbonnementController(AbonnementService abonnementService) {
+        this.abonnementService = abonnementService;
+    }
 
     @PostMapping("/AjouterAbonnement")
     public Abonnement AjouterAbonnement(@RequestBody Abonnement a) {return abonnementService.AjouterAbonnement(a);}

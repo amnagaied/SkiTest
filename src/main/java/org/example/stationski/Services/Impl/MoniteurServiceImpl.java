@@ -37,4 +37,9 @@ public class MoniteurServiceImpl implements MoniteurService {
     @Override
     public List<Moniteur> GetAllMoniteur() {
         return moniteurRepository.findAll();    }
+
+    @Override
+    public Moniteur addInstructorAndAssignToCourse(Moniteur moniteur, Long numCourse) {
+        return null;
+    }
 }

@@ -13,7 +13,11 @@ import java.util.List;
 
 public class InscriptionController {
     @Autowired
-    InscriptionService InscriptionService;
+    private final InscriptionService InscriptionService;
+
+    public InscriptionController(org.example.stationski.Services.Interfaces.InscriptionService inscriptionService) {
+        InscriptionService = inscriptionService;
+    }
 
     @PostMapping("/AjouterInscription")
     public Inscription AjouterInscription(@RequestBody Inscription a) {return InscriptionService.AjouterInscription(a);}
